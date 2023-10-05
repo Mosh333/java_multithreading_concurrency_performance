@@ -1,0 +1,38 @@
+Have responsiveness and  performance - with the help of OS -> use threads to multitask
+
+Responsiveness via concurrency
+Performance via parallelism
+
+Thread lifecycle
+
+Process/context is created when an application is loaded from the hard disk into the memory, creating a running instance
+or process of that program
+
+Process is separate from other processes, it's own enclosed bubble.
+Contains bunch of PIDs with priority, execution modes etc.
+Also contains files, data/heaps, code as well as Main Thread with Stack and Instruction Pointer Container.
+
+Multithreaded process means multiple threads, each with its own stack and instruction pointer exists.
+
+Stack - Region in memory, where local variables are stored and passed into functions
+Instruction Pointer - Address of the next instruction to execute
+Threads - full definition incoming
+
+Threads share files, heap and code
+
+Context switch - act of CPU switching context between a thread in a process to another thread in same or different process
+Not cheap to context switch. Too much threads/context switching results thrashing aka not doing real work.
+
+Thread scheduling - schedule the threads each having to do some application workload. Different scheduling algorithms.
+General approach nowadays is use epochs - aka dynamic approach
+
+dynamic priority = static priority + bonus
+focus on UI tasks that are quick and need immediate attention then focus on computational task that can
+take some time to complete.
+
+
+Threads vs processes - When to know if you should create a new thread in a given process or create a new process 
+with a new thread to do the work on? Threads share lot of resources and faster to make/destroy
+so less resource intensive. In that case, use multithreaded architecture. If security and stability is
+a bigger concern, focus on multi-process architecture. Also if tasks are unrelated, better to segregate
+into separate processes.
